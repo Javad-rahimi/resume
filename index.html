@@ -1,0 +1,689 @@
+<html lang="fa" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>رزومه محمد جواد رحیمی</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      user-select: none;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e0e7ff;
+      line-height: 1.6;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+      direction: rtl;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+
+    /* --- کارت معرفی --- */
+    .hero-card {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(145deg, #1e293b, #111827);
+      border-radius: 2.5rem;
+      box-shadow:
+        0 10px 30px rgba(168, 85, 247, 0.25),
+        inset 0 0 40px #7c3aed66;
+      overflow: visible;
+      cursor: pointer;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      outline: none;
+      margin: 0 auto 3rem;
+    }
+
+    .glow-layer {
+      position: absolute;
+      border-radius: 2.5rem;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      pointer-events: none;
+      filter: blur(20px);
+      opacity: 0.7;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    .glow1 {
+      background: linear-gradient(45deg, #a855f7, #8b5cf6, #c084fc);
+      animation: rotateGlow 20s linear infinite;
+      z-index: 1;
+    }
+
+    .glow2 {
+      background: linear-gradient(135deg, #f472b6, #ec4899, #db2777);
+      animation: rotateGlow 35s reverse linear infinite;
+      filter: blur(30px);
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    .glow3 {
+      background: linear-gradient(90deg, #38bdf8, #0ea5e9, #3b82f6);
+      animation: rotateGlow 25s linear infinite;
+      filter: blur(15px);
+      opacity: 0.6;
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.4rem;
+      color: #e0e7ff;
+      text-align: center;
+      user-select: none;
+      padding: 1.6rem;
+    }
+
+    .hero-content img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #a855f7;
+      box-shadow:
+        0 0 15px #a855f7,
+        inset 0 0 10px #d8b4fe;
+      transition: transform 0.5s ease;
+    }
+
+    .hero-content h1 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      letter-spacing: 1.3px;
+      text-shadow: 0 0 10px #a855f7aa;
+    }
+
+    .hero-content h3 {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #c4b5fd;
+      text-shadow: 0 0 8px #a855f7cc;
+      max-width: 230px;
+    }
+
+    .hero-card.expanded {
+      width: 720px;
+      height: 480px;
+      border-radius: 2.5rem;
+      box-shadow:
+        0 20px 50px rgba(168, 85, 247, 0.5),
+        inset 0 0 60px #7c3aed99;
+      backdrop-filter: blur(20px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      display: grid !important;
+      grid-template-columns: 180px 1fr;
+      gap: 2.8rem;
+      padding: 2.4rem;
+      justify-items: start;
+      align-items: center;
+      margin: 0 auto 4rem;
+    }
+
+    .hero-card.expanded .hero-content {
+      flex-direction: row !important;
+      align-items: center !important;
+      text-align: right;
+    }
+
+    .hero-card.expanded img {
+      width: 160px;
+      height: 160px;
+      border-radius: 1.8rem;
+      box-shadow:
+        0 0 25px #a855f7cc,
+        inset 0 0 15px #d8b4fe;
+      transform: scale(1.1);
+      transition: all 0.7s ease;
+    }
+
+    .hero-card.expanded h1 {
+      font-size: 2.8rem;
+      text-shadow: 0 0 20px #a855f7ee;
+    }
+
+    .hero-card.expanded h3 {
+      font-size: 1.3rem;
+      max-width: 400px;
+    }
+
+    .hero-card:hover,
+    .hero-card:focus {
+      transform: scale(1.05);
+      box-shadow:
+        0 25px 70px rgba(168, 85, 247, 0.7),
+        inset 0 0 80px #a855f7cc;
+      transition: all 0.4s ease;
+    }
+
+    @keyframes rotateGlow {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* بخش درباره من */
+    section.about {
+      max-width: 720px;
+      margin: 3rem auto;
+      text-align: center;
+    }
+    section.about h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #a855f7;
+      text-shadow: 0 0 12px #a855f7cc;
+    }
+    section.about p {
+      font-size: 1.15rem;
+      color: #c4b5fdcc;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+      letter-spacing: 0.5px;
+    }
+
+    /* بخش مهارت‌ها */
+    section.skills {
+      margin: 4rem auto;
+      max-width: 720px;
+    }
+    section.skills h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #a855f7;
+      text-shadow: 0 0 12px #a855f7cc;
+      text-align: center;
+    }
+    .skills-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+    }
+    .skill-item {
+      background: linear-gradient(145deg, #1e293b, #111827);
+      border-radius: 1.5rem;
+      padding: 1rem 1.6rem;
+      width: 130px;
+      text-align: center;
+      box-shadow:
+        0 10px 25px rgba(168, 85, 247, 0.15),
+        inset 0 0 15px #7c3aed55;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      cursor: default;
+    }
+    .skill-item:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 25px 45px rgba(168, 85, 247, 0.6),
+        inset 0 0 30px #a855f7aa;
+    }
+    .skill-icon {
+      font-size: 2.6rem;
+      color: #a855f7;
+      margin-bottom: 0.6rem;
+      transition: color 0.3s ease;
+    }
+    .skill-item:hover .skill-icon {
+      color: #ec4899;
+    }
+    .skill-name {
+      font-weight: 600;
+      color: #c4b5fdcc;
+      font-size: 1.1rem;
+    }
+
+    /* آیکون‌ها از FontAwesome */
+    @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
+    /* بخش پروژه‌ها */
+    section.projects {
+      margin: 4rem auto;
+      max-width: 720px;
+    }
+    section.projects h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+      color: #a855f7;
+      text-shadow: 0 0 12px #a855f7cc;
+      text-align: center;
+    }
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 1.8rem;
+    }
+    .project-card {
+      background: linear-gradient(145deg, #1e293b, #111827);
+      border-radius: 1.8rem;
+      padding: 1.6rem 1.8rem;
+      box-shadow:
+        0 10px 25px rgba(168, 85, 247, 0.15),
+        inset 0 0 15px #7c3aed55;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      box-shadow:
+        0 25px 50px rgba(168, 85, 247, 0.5),
+        inset 0 0 40px #a855f7aa;
+      transform: translateY(-6px);
+    }
+    .project-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #a855f7;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 0 8px #a855f7cc;
+    }
+    .project-desc {
+      color: #c4b5fdcc;
+      font-size: 1rem;
+      line-height: 1.4;
+      user-select: text;
+    }
+
+    /* بخش تماس */
+    section.contact {
+      margin: 4rem auto 2rem;
+      max-width: 720px;
+      padding: 2rem 1.2rem;
+      background: #111827dd;
+      border-radius: 2rem;
+      box-shadow:
+        0 0 30px #a855f7bb;
+      text-align: center;
+    }
+    section.contact h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+      color: #a855f7;
+      text-shadow: 0 0 12px #a855f7cc;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 2.2rem;
+      margin-bottom: 1.8rem;
+    }
+    .contact-icons a {
+      color: #a855f7cc;
+      font-size: 2.4rem;
+      transition: color 0.3s ease;
+    }
+    .contact-icons a:hover {
+      color: #ec4899;
+    }
+
+    .contact-form {
+      max-width: 520px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 0.9rem 1rem;
+      border-radius: 1rem;
+      border: none;
+      font-size: 1rem;
+      font-family: 'Vazirmatn', sans-serif;
+      background: #1e293b;
+      color: #e0e7ff;
+      box-shadow: inset 0 0 5px #7c3aedaa;
+      transition: box-shadow 0.3s ease;
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      box-shadow: 0 0 12px #a855f7cc;
+    }
+
+    .contact-form button {
+      background: #a855f7;
+      color: white;
+      font-weight: 700;
+      padding: 1rem;
+      border-radius: 1.2rem;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+      box-shadow: 0 5px 15px #a855f7cc;
+    }
+
+    .contact-form button:hover {
+      background: #ec4899;
+    }
+
+    /* ریسپانسیو */
+    @media (max-width: 768px) {
+      main {
+        margin: 1.5rem 1rem 3rem;
+        max-width: 95vw;
+      }
+      .hero-card.expanded {
+        width: 90vw;
+        height: auto;
+        padding-bottom: 2rem;
+        grid-template-columns: 1fr !important;
+      }
+      .hero-card.expanded img {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 1.5rem;
+        grid-row: unset !important;
+        transform: scale(1);
+        border-radius: 50%;
+      }
+      .hero-card.expanded .hero-content {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center !important;
+        align-items: center !important;
+      }
+      .skills-grid {
+        justify-content: center;
+      }
+      .project-list {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    section.education-section,
+    section.certificates-section {
+      margin: 4rem auto;
+      max-width: 720px;
+      text-align: center;
+    }
+
+    section.education-section h2,
+    section.certificates-section h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.8rem;
+      color: #a855f7;
+      text-shadow: 0 0 12px #a855f7cc;
+    }
+
+    /* ساختار گرید برای کارت‌ها */
+    .education-list,
+    .cert-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+    }
+
+    /* کارت‌ها */
+    .edu-card,
+    .cert-card {
+      background: linear-gradient(145deg, #1e293b, #111827);
+      border-radius: 1.8rem;
+      padding: 1.4rem 1.6rem;
+      box-shadow:
+        0 10px 25px rgba(168, 85, 247, 0.15),
+        inset 0 0 15px #7c3aed55;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      cursor: default;
+    }
+
+    .edu-card:hover,
+    .cert-card:hover {
+      box-shadow:
+        0 25px 50px rgba(168, 85, 247, 0.5),
+        inset 0 0 40px #a855f7aa;
+      transform: translateY(-6px);
+    }
+
+    /* عنوان‌ها و توضیحات */
+    .edu-title,
+    .cert-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #a855f7;
+      margin-bottom: 0.6rem;
+      text-shadow: 0 0 8px #a855f7cc;
+    }
+
+    .edu-desc,
+    .cert-desc {
+      color: #c4b5fdcc;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      font-size: 1.1rem;
+      color: #c4b5fdcc;
+      line-height: 2.2;
+      text-align: right;
+    }
+
+    .contact-list a {
+      color: #a855f7;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-list a:hover {
+      color: #ec4899;
+    }
+
+    .copy-phone {
+      cursor: pointer;
+      color: #38bdf8;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .copy-phone:hover {
+      color: #0ea5e9;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- کارت معرفی -->
+    <div class="hero-card" id="heroCard" tabindex="0" aria-label="کارت معرفی محمد جواد رحیمی" role="region">
+      <div class="glow-layer glow1"></div>
+      <div class="glow-layer glow2"></div>
+      <div class="glow-layer glow3"></div>
+      <div class="hero-content">
+        <img src="./رزومه محمد جواد رحیمی_files/583231" alt="عکس محمد جواد رحیمی" loading="lazy">
+        <div class="text-content">
+          <h1>محمد جواد رحیمی</h1>
+          <h3>برنامه‌نویس پایتون | توسعه‌دهنده وب | هوش مصنوعی</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- درباره من -->
+    <section class="about" id="about">
+      <h2>درباره من</h2>
+      <p>
+        سلام! من محمد جواد رحیمی هستم، برنامه‌نویس حرفه‌ای پایتون با تخصص در توسعه ربات‌ها، وب و هوش مصنوعی. علاقه‌مند به حل مسائل پیچیده و خلق نرم‌افزارهای کارآمد و زیبا.
+      </p>
+    </section>
+
+    <!-- مهارت‌ها -->
+    <section class="skills" id="skills">
+      <h2>مهارت‌ها</h2>
+      <div class="skills-grid" aria-label="مهارت‌های محمد جواد رحیمی">
+        <div class="skill-item" tabindex="0" aria-label="مهارت برنامه‌نویسی پایتون">
+          <i class="fab fa-python skill-icon" aria-hidden="true"></i>
+          <div class="skill-name">Python</div>
+        </div>
+        <div class="skill-item" tabindex="0" aria-label="مهارت ساخت ربات تلگرامی">
+          <i class="fas fa-server skill-icon" aria-hidden="true"></i>
+          <div class="skill-name">telegram bot</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- پروژه‌ها -->
+    <section class="projects" id="projects">
+      <h2>پروژه‌ها</h2>
+      <div class="project-list" aria-label="پروژه‌های محمد جواد رحیمی">
+        <div class="project-card" tabindex="0">
+          <h3 class="project-title">ربات سلف</h3>
+          <p class="project-desc">
+            ربات هوشمند تلگرام برای پاسخ خودکار و مدیریت خودکار کانال‌ها و گروه‌ها با امکانات پیشرفته و امنیت بالا.
+          </p>
+        </div>
+        <div class="project-card" tabindex="0">
+          <h3 class="project-title">جواد کویز</h3>
+          <p class="project-desc">
+            ربات کوییز آنلاین با سوالات متنوع و پنل مدیریت پیشرفته برای ایجاد و ارزیابی کوییزها.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- بخش تحصیلات -->
+    <section class="education-section" id="education">
+      <h2>تحصیلات</h2>
+      <div class="education-list">
+        <div class="edu-card">
+          <h3 class="edu-title">پایه دهم رشته ریاضی</h3>
+          <p class="edu-desc">مدرسه شهید مطهری</p>
+        </div>
+    </section>
+
+    <!-- بخش مدارک و گواهینامه‌ها -->
+    <section class="certificates-section" id="certificates">
+      <h2>مدارک و گواهینامه‌ها</h2>
+      <div class="cert-list">
+        <a href="https://mftplus.ir/verifycertificate?nationalcode=2051599599&code=1820471" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+          <div class="cert-card">
+            <h3 class="cert-title">مدرک Python</h3>
+            <p class="cert-desc">از مجتمع فنی تهران (شعبه مازندران)</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+<!-- ارتباط با من -->
+    <section class="contact" id="contact">
+      <h2>ارتباط با من</h2>
+      <ul class="contact-list">
+        <li>
+          <strong>گیت‌هاب:</strong>
+          <a href="https://github.com/Javad-rahimi" target="_blank" rel="noopener noreferrer">
+            github.com/Javad-rahimi
+          </a>
+        </li>
+        <li>
+          <strong>تلگرام:</strong>
+          <a href="https://t.me/Mjrd1388" target="_blank" rel="noopener noreferrer">
+            @Mjrd1388
+          </a>
+        </li>
+        <li>
+          <strong>شماره تماس:</strong>
+          <span class="copy-phone" onclick="copyPhone()">09057018365</span>
+        </li>
+      </ul>
+      <p id="copy-msg" style="margin-top: 1rem; color: #16f;">‌</p>
+    </section>
+  </main>
+
+  <script>
+    const heroCard = document.getElementById('heroCard');
+
+    heroCard.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        heroCard.classList.toggle('expanded');
+      }
+    });
+
+  </script>
+<script>
+  function copyPhone() {
+    const phone = "09057018365";  // شماره خودت رو اینجا بذار
+    navigator.clipboard.writeText(phone).then(() => {
+      document.getElementById('copy-msg').textContent = "شماره کپی شد ✅";
+      setTimeout(() => {
+        document.getElementById('copy-msg').textContent = "";
+      }, 2000);
+    });
+  }
+</script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
